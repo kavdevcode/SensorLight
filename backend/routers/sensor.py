@@ -11,3 +11,6 @@ router = APIRouter(prefix="/sensor", tags=["sensor"])
 def list_sensors(db: Session = Depends(get_db)):
     return sensor_svr.list_sensors(db)
 
+@router.get("/{sensor_id}", response_model=SensorBase)
+def sensor_id(sensor_id:int, db: Session = Depends(get_db)):
+    return sensor_svr.sensor_by_id(db, sensor_id)
