@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, String, func
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 
-from database import Base
+from backend.database import Base
 
 
 class Sensor(Base):
